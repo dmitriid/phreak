@@ -1,0 +1,47 @@
+<tr class="<%= if @pod.selected, do: 'bg-blue-lightest' %><%= if @ui_deletion_requested_for == @pod.data.metadata.uid do %>bg-red-lightest<% end %>"
+    id="<%= @pod.data.metadata.uid %>">
+    <td phx-click="select"
+        phx-value="<%= @pod.data.metadata.uid %>">
+        <input type="checkbox" <%= if @pod.selected, do: 'checked' %> >
+    </td>
+    <td class="left">
+        <%= obfuscate(@pod.data.metadata.name) %>
+    </td>
+    <td class="left">
+        <%= for owner <- @pod.data.metadata.owner_references do %>
+        <%= obfuscate(owner.name) %>
+        <br />
+        <small class="text-grey-darker"><%= owner.kind %></small>
+        <% end %>
+    </td>
+    <td class="left <%= pod_status_style(@pod.status) %>">
+        <%= @pod.status %>
+    </td>
+
+    <td class="left">
+        <button type="button" class="btn btn-icon btn-danger-outline btn-sm"
+                phx-click="delete-pod-request"
+                phx-value="<%= @pod.data.metadata.uid %>">
+            <clr-icon shape="times"></clr-icon>
+            Delete
+        </button>
+    </td>
+</tr>
+<%= if @ui_deletion_requested_for == @pod.data.metadata.uid do %>
+<tr>
+    <td colspan="5" class="bg-red">
+        <div class="text-white"> Delete <%= obfuscate(@pod.data.metadata.name) %>?</div>
+        <button class="btn btn-icon btn-danger btn-inverse"
+                phx-click="delete-pod-indeed"
+                phx-value="<%= @pod.data.metadata.name %>">
+            <clr-icon shape="times"></clr-icon>
+            <span>Delete</span>
+        </button>
+        <button class="btn btn-small btn-inverse bg-white text-black"
+                phx-click="delete-pod-cancel"
+                phx-value="<%= @pod.data.metadata.uid %>">
+            <span class="px-4">Cancel</span>
+        </button>
+    </td>
+</tr>
+<% end %>

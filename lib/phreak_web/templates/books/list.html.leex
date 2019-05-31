@@ -1,0 +1,13 @@
+<h1>Books</h1>
+
+<ol>
+  <%= for book <- @books do %>
+  <li>
+    <small><%= book["isbn"] %></small>
+    <br />
+    <strong><%= book["title"] %></strong>
+    <br />
+    <%= book["duration"] %>
+  </li>
+  <% end %>
+</ol>
