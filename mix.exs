@@ -40,9 +40,17 @@ defmodule Phreak.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:psq, "~> 0.1.0"},
+      {:kazan, "~> 0.11"},
+      {:yaml_elixir, "~> 2.2.0"},
+      {:fuzzy_compare, "~> 1.0"},
+      {:quantum, "~> 2.3"},
+      {:timex, "~> 3.0"},
+      {:deep_merge, "~> 1.0"}
     ]
   end
 
