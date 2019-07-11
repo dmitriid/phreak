@@ -1,5 +1,6 @@
 defmodule PhreakWeb.Router do
   use PhreakWeb, :router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,6 +8,7 @@ defmodule PhreakWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Phoenix.LiveView.Flash
   end
 
   pipeline :api do
