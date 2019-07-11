@@ -16,7 +16,7 @@
         </div>
     </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/customelements.min.js") %>"></script>
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/clricons.min.js") %>"></script>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/customelements.min.js") %>"></script>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/clricons.min.js") %>"></script>
   </body>
 </html>

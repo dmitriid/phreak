@@ -30,12 +30,14 @@ module.exports = (env, options) => ({
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: '../css/app.css' }),
+    new MiniCssExtractPlugin({filename: '../css/clr-ui.min.css'}),
+    new MiniCssExtractPlugin({filename: '../css/clr-icons.min.css'}),
     new CopyWebpackPlugin([{ from: 'static/', to: '../' }])
   ]
 });
