@@ -1,20 +1,29 @@
 # Phreak
 
-To start your Phoenix server:
+A simple Kubernetes dashboard with Elixir, Phoenix, LiveView. No external 
+dependencies.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+Ad-hoc code, no documentation for now. In action: https://www.youtube.com/watch?v=vOaZ_AspfKc 
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+# How
 
-## Learn more
+```bash
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+> cd phreak
+> mix deps.get
+> cd assets && npm install
+> cd -
+> iex -S mix phx.server 
+
+```
+
+Open http://localhost:4000/kube
+
+# Requirements
+
+You must have `~/.kube/config` yaml configuration (if you run stuff on GCP, you
+will have it).
+
+
+
