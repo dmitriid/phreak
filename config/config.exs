@@ -43,6 +43,17 @@ config :phreak,
        :kube,
        config: "/Users/dmitrii.dimandt/.kube/config"
 
+# Refresh kube once every 15 seconds
+config :phreak,
+       Phreak.Scheduler,
+       jobs: [
+         refresh_kube: [
+           schedule: {:extended, "*/15"},
+           task: fn -> Phreak.Kube.refresh() end
+         ]
+       ],
+       debug_logging: false
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

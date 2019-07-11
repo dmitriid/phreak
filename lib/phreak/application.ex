@@ -12,7 +12,8 @@ defmodule Phreak.Application do
       PhreakWeb.Endpoint,
       # Starts a worker by calling: Phreak.Worker.start_link(arg)
       # {Phreak.Worker, arg},
-      {Phreak.Kube, []}
+      {Phreak.Kube, []},
+      Phreak.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
