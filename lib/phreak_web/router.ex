@@ -19,6 +19,7 @@ defmodule PhreakWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/kube", KubeLive
   end
 
   # Other scopes may use custom stacks.
