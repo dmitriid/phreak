@@ -7,9 +7,6 @@
 # General application configuration
 use Mix.Config
 
-config :phreak,
-  ecto_repos: [Phreak.Repo]
-
 # Configures the endpoint
 config :phreak, PhreakWeb.Endpoint,
   url: [host: "localhost"],
